@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A536CA57-FCF5-4DEC-84C3-66BBDFAF92FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DiceBotCommon</RootNamespace>
+    <AssemblyName>DiceBotCommon</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dice\DiceException.cs" />
+    <Compile Include="Dice\DieRollSeries.cs" />
+    <Compile Include="Dice\IDieParser.cs" />
+    <Compile Include="Dice\IDieRoller.cs" />
+    <Compile Include="Dice\RollGroupResult.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Plugins\IDiceBotPlugin.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomNumberGenerators\IRandomNumberGenerator.cs" />
+    <Compile Include="RandomNumberGenerators\RandomProvider.cs" />
+    <Compile Include="RandomNumberGenerators\RandomWithNotify.cs" />
+    <Compile Include="RandomNumberGenerators\UniformRandomNumberGenerator.cs" />
+    <Compile Include="Skype\AttachedState.cs" />
+    <Compile Include="Skype\EventArgs\ContactRequestAcceptedEventArgs.cs" />
+    <Compile Include="Skype\EventArgs\SkypeMessageReceivedEventArgs.cs" />
+    <Compile Include="Skype\ISkypeController.cs" />
+    <Compile Include="Skype\Wrappers\ChatRole.cs" />
+    <Compile Include="Skype\Wrappers\ChatType.cs" />
+    <Compile Include="Skype\Wrappers\ISkypeChat.cs" />
+    <Compile Include="Skype\Wrappers\ISkypeMessage.cs" />
+    <Compile Include="Skype\Wrappers\ISkypeUser.cs" />
+    <Compile Include="Skype\Wrappers\MessageStatus.cs" />
+    <Compile Include="Skype\Wrappers\MessageType.cs" />
+    <Compile Include="Skype\Wrappers\SkypeChat.cs" />
+    <Compile Include="Skype\Wrappers\SkypeMessage.cs" />
+    <Compile Include="Skype\Wrappers\SkypeUser.cs" />
+    <Compile Include="Statistics\IDieStats.cs" />
+    <Compile Include="Statistics\IReadDieStats.cs" />
+    <Compile Include="Statistics\StatsRow.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SKYPE4COMLib">
+      <Guid>{03282B5D-B38F-469D-849A-09B0A7F4881B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
