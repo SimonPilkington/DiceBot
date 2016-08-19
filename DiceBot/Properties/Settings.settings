@@ -5,7 +5,7 @@
     <Setting Name="OperatorHandle" Provider="AppDirectorySettingsProvider" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="RecordStats" Type="System.Boolean" Scope="User">
+    <Setting Name="RecordStats" Provider="AppDirectorySettingsProvider" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
