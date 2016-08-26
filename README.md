@@ -11,7 +11,7 @@ Windows-only Skype bot for rolling dice using the old Desktop API, written in C#
 * Command support. Message the bot with !help once it's running to see the basic ones.
  * Search blindly (or look at the source) to find secret ones.
 * Statistics are optionally kept for all users.
- * When your (fellow) players complain about the dice treating them unfairly, shut them up conveniently with hard facts (or let them weep in dispair if they're right).
+ * When your (fellow) players complain about the dice treating them unfairly, shut them up conveniently with hard facts (or let them weep in despair if they're right).
 * Plugin support using [MEF](https://msdn.microsoft.com/en-us/library/dd460648(v=vs.110).aspx "Managed Extensibility Framework").
 
 ### System Requirements
